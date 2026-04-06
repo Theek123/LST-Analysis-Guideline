@@ -52,12 +52,13 @@ make_line(
 
 ### Step 6: Calculate LST
 1. **TOA Radiance (L𝝀)**:  
-   L𝝀 = ML * QCAL + AL  
+   L𝝀 = ML * QCAL + AL
+   *L𝝀 = 0.0003342 * Band10 + 0.10000*
    - ML = Radiance multiplicative Band (B10)  
    - AL = Radiance additive Band (B10)  
    - QCAL = DN (digital number)
 
-2. **Brightness Temperature (BT in °C)**:  
+3. **Brightness Temperature (BT in °C)**:  
 
    BT = (K2 / ln(K1 / L𝝀 + 1)) – 273.15
 

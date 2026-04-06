@@ -36,13 +36,12 @@ This repository provides a **step-by-step guideline** for estimating Land Surfac
 - Add X and Y coordinates of the centroid to the attribute table.  
 - Use **Geometry by Expression** tool to create lines extending from the centroid in cardinal directions (N, S, E, W).  
 - Example expression for North line:
-
+```sql
 make_line(
     make_point("X_coor", "Y_coor"),
     make_point("X_coor", "Y_coor" + [distance])
 )
-
-
+```
 ### Step 4: Create Points Along Direction Lines
 - Create lines for intercardinal directions (e.g., NW at 45°).  
 - Generate points along each line using **Points Along Geometry** tool with fixed spacing (e.g., 50 m).
@@ -59,16 +58,22 @@ make_line(
    - QCAL = DN (digital number)
 
 2. **Brightness Temperature (BT in °C)**:  
+
    BT = (K2 / ln(K1 / L𝝀 + 1)) – 273.15
 
-3. **NDVI**:  
+4. **NDVI**:  
    NDVI = (Band 5 – Band 4) / (Band 5 + Band 4)
 
-4. **Land Surface Emissivity (LSE)**:  
-   Pv = ((NDVI – NDVI_MIN) / (NDVI_MAX – NDVI_MIN))²  
-   E = Land Surface Emissivity
+5. **Land Surface Emissivity (LSE)**:  
+   $$
+\mathrm{Pv} = \frac{NDVI - NDVI_MIN}{NDVI_MAX + NDVI_MIN}² 
+$$
+   E = 0.004 x P_V + 0.986
+   
+Pv = Proportion of vegetation
+E = Land Surface Emissivity
 
-5. **LST (Kelvin)**:  
+7. **LST (Kelvin)**:  
    LST = BT / (1 + (λ * BT / C2) * ln(E))  
    - λ = 10.8 µm for Band 10  
    - C2 = 1.438 × 10⁻² m·K

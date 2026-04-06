@@ -65,8 +65,8 @@ make_line(
    NDVI = (Band 5 – Band 4) / (Band 5 + Band 4)
 
 5. **Land Surface Emissivity (LSE)**:  
-   $$
-\mathrm{Pv} = \frac{NDVI - NDVI_MIN}{NDVI_MAX + NDVI_MIN}² 
+$$
+\mathrm{Pv} = \frac{NDVI - NDVI_MIN}{NDVI_MAX + NDVI_MIN}²
 $$
    E = 0.004 x P_V + 0.986
    

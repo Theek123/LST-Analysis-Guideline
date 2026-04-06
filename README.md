@@ -115,4 +115,5 @@ make_line(
 - QGIS Documentation (Geometry Tools, Zonal Statistics, DataPlotly)
 --- 
 Author : Theekshana Pathirana
+
 BSc in Geographical Information Science

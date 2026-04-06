@@ -42,13 +42,26 @@ make_line(
     make_point("X_coor", "Y_coor" + [distance])
 )
 ```
+<p align="center">
+  <img src="LST_Images/Cardinal_Directions.jpg" width="600">
+  <br><em>Cardinal directions</em>
+</p>
+
 ### Step 4: Create Points Along Direction Lines
 - Create lines for intercardinal directions (e.g., NW at 45°).  
 - Generate points along each line using **Points Along Geometry** tool with fixed spacing (e.g., 50 m).
+<p align="center">
+  <img src="LST_Images/Points_by_50m.jpg" width="600">
+  <br><em>Points along the North west line</em>
+</p>
 
 ### Step 5: Create Buffers
 - Create small buffers around each point (e.g., 3x3 pixel buffers).  
 - Buffer distance = pixel size × 1.5.
+<p align="center">
+  <img src="LST_Images/Buffers.jpg" width="600">
+  <br><em>Buffers</em>
+</p>
 
 ### Step 6: Calculate LST
 1. **TOA Radiance (L𝝀)**:  

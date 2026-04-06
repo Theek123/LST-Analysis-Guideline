@@ -42,6 +42,8 @@ make_line(
     make_point("X_coor", "Y_coor" + [distance])
 )
 
+---
+
 - Repeat for **East, West, South** and **intercardinal directions** (NE, NW, SE, SW).  
 - Distance for each line can be estimated based on lake extent.
 

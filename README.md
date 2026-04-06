@@ -19,8 +19,7 @@ This repository provides a **step-by-step guideline** for estimating Land Surfac
 
 ## Tools & Software
 - **QGIS** (Geometry Tools, Zonal Statistics, DataPlotly plugin)  
-- **Landsat 8 bands 4,5, and 10**  
-- Basic knowledge of **raster and vector processing**  
+- **Landsat 8 bands 4,5, and 10**    
 
 ---
 

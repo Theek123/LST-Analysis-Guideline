@@ -67,7 +67,7 @@ make_line(
 5. **Land Surface Emissivity (LSE)**:  
    Pv = ((NDVI - NDVIₘᵢₙ) / (NDVIₘₐₓ - NDVIₘᵢₙ))²
 
-   E = 0.004 x P_V + 0.986
+   E = 0.004 x Pv + 0.986
    
    Pv = Proportion of vegetation
    E = Land Surface Emissivity
@@ -98,3 +98,6 @@ make_line(
 ## References
 - USGS Landsat 8 Handbook  
 - QGIS Documentation (Geometry Tools, Zonal Statistics, DataPlotly)
+--- 
+Author : Theekshana Pathirana
+BSc in Geographical Information Science

@@ -36,10 +36,61 @@ This repository provides a **step-by-step guideline** for estimating Land Surfac
 - Add X and Y coordinates of the centroid to the attribute table.  
 - Use **Geometry by Expression** tool to create lines extending from the centroid in cardinal directions (N, S, E, W).  
 - Example expression for North line:
-```sql
+
 make_line(
     make_point("X_coor", "Y_coor"),
     make_point("X_coor", "Y_coor" + [distance])
-)```
+)
 
-### Step 4 
+
+### Step 4: Create Points Along Direction Lines
+- Create lines for intercardinal directions (e.g., NW at 45°).  
+- Generate points along each line using **Points Along Geometry** tool with fixed spacing (e.g., 50 m).
+
+### Step 5: Create Buffers
+- Create small buffers around each point (e.g., 3x3 pixel buffers).  
+- Buffer distance = pixel size × 1.5.
+
+### Step 6: Calculate LST
+1. **TOA Radiance (L𝝀)**:  
+   L𝝀 = ML * QCAL + AL  
+   - ML = Radiance multiplicative Band (B10)  
+   - AL = Radiance additive Band (B10)  
+   - QCAL = DN (digital number)
+
+2. **Brightness Temperature (BT in °C)**:  
+   BT = (K2 / ln(K1 / L𝝀 + 1)) – 273.15
+
+3. **NDVI**:  
+   NDVI = (Band 5 – Band 4) / (Band 5 + Band 4)
+
+4. **Land Surface Emissivity (LSE)**:  
+   Pv = ((NDVI – NDVI_MIN) / (NDVI_MAX – NDVI_MIN))²  
+   E = Land Surface Emissivity
+
+5. **LST (Kelvin)**:  
+   LST = BT / (1 + (λ * BT / C2) * ln(E))  
+   - λ = 10.8 µm for Band 10  
+   - C2 = 1.438 × 10⁻² m·K
+
+### Step 7: Extract Average LST for Buffers
+- Use **Zonal Statistics** tool in QGIS.  
+- Input: buffer layer and LST raster.  
+- Select **Mean** statistic to compute average LST for each buffer.
+
+### Step 8: Visualize LST
+- Install the **DataPlotly** plugin.  
+- Create a scatter plot using distance from centroid as X-axis and average LST as Y-axis.
+
+---
+
+## Notes
+- The lake boundary is **manually digitized** from satellite imagery (e.g., Landsat or Sentinel-2).  
+- This guideline is **independent of actual data**; can apply it to any water body.  
+- LST calculation formulas are based on standard Landsat 8 Thermal Infrared Bands.
+
+---
+
+## References
+- USGS Landsat 8 Handbook  
+- QGIS Documentation (Geometry Tools, Zonal Statistics, DataPlotly)

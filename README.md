@@ -65,14 +65,12 @@ make_line(
    NDVI = (Band 5 – Band 4) / (Band 5 + Band 4)
 
 5. **Land Surface Emissivity (LSE)**:  
-$$
-Pv = \left( \frac{NDVI - NDVI_{\text{MIN}}}{NDVI_{\text{MAX}} - NDVI_{\text{MIN}}} \right)^2
-$$
+   Pv = ((NDVI - NDVI_MIN) / (NDVI_MAX - NDVI_MIN))^2
 
-E = 0.004 x P_V + 0.986
+   E = 0.004 x P_V + 0.986
    
-Pv = Proportion of vegetation
-E = Land Surface Emissivity
+   Pv = Proportion of vegetation
+   E = Land Surface Emissivity
 
 7. **LST (Kelvin)**:  
    LST = BT / (1 + (λ * BT / C2) * ln(E))  

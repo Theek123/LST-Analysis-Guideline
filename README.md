@@ -1,4 +1,4 @@
-# LST-Analysis-Guideline
+# LST-Analysis-Guideline in QGIS
 Guideline for calculating Land Surface Temperature (LST) around a water body using QGIS and Landsat 8 imagery.
 
 ---

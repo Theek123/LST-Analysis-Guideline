@@ -66,8 +66,9 @@ make_line(
 
 5. **Land Surface Emissivity (LSE)**:  
 $$
-Pv = \left( \frac{NDVI - NDVI_{MIN}}{NDVI_{MAX} - NDVI_{MIN}} \right)^2
+Pv = \left( \frac{NDVI - NDVI_{\text{MIN}}}{NDVI_{\text{MAX}} - NDVI_{\text{MIN}}} \right)^2
 $$
+
 E = 0.004 x P_V + 0.986
    
 Pv = Proportion of vegetation

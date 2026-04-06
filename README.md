@@ -40,4 +40,6 @@ This repository provides a **step-by-step guideline** for estimating Land Surfac
 make_line(
     make_point("X_coor", "Y_coor"),
     make_point("X_coor", "Y_coor" + [distance])
-)
+)```
+
+### Step 4 

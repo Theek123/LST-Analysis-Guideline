@@ -13,7 +13,7 @@ This repository provides a **step-by-step guideline** for estimating Land Surfac
 - Extracting average LST per buffer  
 - Visualizing trends using scatter plots
 
-> This repo focuses on **methodology and workflow**. Actual results and rasters can be added in a separate repository.
+> This repo focuses on **methodology and workflow**. 
 
 ---
 

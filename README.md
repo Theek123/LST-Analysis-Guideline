@@ -101,6 +101,15 @@ make_line(
 - Install the **DataPlotly** plugin.  
 - Create a scatter plot using distance from centroid as X-axis and average LST as Y-axis.
 
+<p align="center">
+  <img src="LST_Images/NorthWEST_LST_Zoom.jpg" width="600">
+  <br><em>Land Surface Temperature Variations - North West Direction</em>
+</p>
+
+<p align="center">
+  <img src="LST_Images/NorthEAST_LST_Zoom_UK.jpg" width="600">
+  <br><em>Land Surface Temperature Variations - North East Direction</em>
+</p>
 ---
 
 ## Notes
